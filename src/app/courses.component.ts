@@ -8,14 +8,15 @@ import { CoursesService } from './course/courses.service';
     <ul>
       <li *ngFor="let course of courses">{{ course }}</li>
     </ul>
+    <img src="{{ imgUrl }}" alt="" />
   `,
 })
 export class CoursesComponent {
   title = 'List Of Courses';
+  imgUrl = 'https://picsum.photos/400/200?random=1';
   courses;
 
   constructor(service: CoursesService) {
-    // let service = new CoursesService();
     this.courses = service.getCourses();
   }
 }
